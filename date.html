@@ -44,11 +44,16 @@
         <form
           class="booking-form"
           id="booking-form"
-          action="https://formsubmit.co/ajax/artur.renner6@gmail.com"
+          action="https://formsubmit.co/artur.renner6@gmail.com"
           method="POST"
         >
           <input type="hidden" name="_subject" value="DatingAppointment - Neue Antwort von Elvira" />
           <input type="hidden" name="_template" value="table" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://pleonastic6.github.io/DatingAppointment/thanks.html"
+          />
 
           <label class="field">
             <span>Wunsch-Date-Idee</span>
@@ -92,11 +97,6 @@
 
           <button class="submit-button" type="submit">Date fix machen</button>
         </form>
-
-        <div class="result-card" id="result-card" hidden>
-          <p class="result-kicker">Status</p>
-          <p class="result-text" id="result-text"></p>
-        </div>
       </section>
     </main>
 

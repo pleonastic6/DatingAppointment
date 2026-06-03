@@ -3,8 +3,6 @@ const decisionButtons = document.querySelector(".decision-buttons");
 const yesButton = document.querySelector("#yes-button");
 const noButton = document.querySelector("#no-button");
 const form = document.querySelector("#booking-form");
-const resultCard = document.querySelector("#result-card");
-const resultText = document.querySelector("#result-text");
 const dateInput = document.querySelector('input[name="date"]');
 
 let noButtonEscapes = 0;
@@ -54,58 +52,3 @@ if (dateInput) {
   const day = String(today.getDate()).padStart(2, "0");
   dateInput.min = `${year}-${month}-${day}`;
 }
-
-form?.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-  const idea = formData.get("idea");
-  const date = formData.get("date");
-  const time = formData.get("time");
-  const note = formData.get("note");
-  const submitButton = form.querySelector('button[type="submit"]');
-  const originalButtonText = submitButton?.textContent;
-
-  if (submitButton) {
-    submitButton.disabled = true;
-    submitButton.textContent = "Wird verschickt...";
-  }
-
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (!data.success) {
-        throw new Error(data.message || "Formular konnte nicht verschickt werden.");
-      }
-
-      const summary = [
-        `Elvira, das sieht offiziell ziemlich nach einem Date aus.`,
-        `Plan: ${idea}.`,
-        `Zeitpunkt: ${date} um ${time}.`,
-        note ? `Notiz dazu: "${note}". Das klingt sehr akzeptabel.` : "Keine Zusatznotiz. Mutig. Respekt.",
-        `Und das Beste: Die Anfrage ist jetzt auch wirklich unterwegs.`,
-      ].join(" ");
-
-      resultText.textContent = summary;
-      resultCard.hidden = false;
-      form.reset();
-      resultCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    })
-    .catch((error) => {
-      resultText.textContent =
-        `Das Absenden hat gerade nicht geklappt. Bitte nochmal probieren. ${error.message}`;
-      resultCard.hidden = false;
-    })
-    .finally(() => {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-      }
-    });
-});
