@@ -20,7 +20,7 @@
           <span>❤</span>
         </div>
         <p class="eyebrow">Level 2</p>
-        <h1>Oha. Das wird ja wirklich cute. Dann such dir mal was Schoenes aus.</h1>
+        <h1>Hallo Elvira. Oha. Das wird ja wirklich cute.</h1>
         <p class="hero-copy">Nur noch ein Termin, dann ist das hier offiziell ein sehr starkes Match.</p>
 
         <div class="gif-strip gif-strip-single" aria-label="Celebration gif">
@@ -37,7 +37,7 @@
       <section class="booking-panel booking-panel-wide">
         <div class="panel-header">
           <p class="panel-kicker">Terminwahl</p>
-          <h2>Such dir einen Slot aus</h2>
+          <h2>Such dir Datum und Uhrzeit aus</h2>
           <p>Wenn nichts passt, mach einfach einen Gegenvorschlag. Ich bin romantisch und verhandlungsbereit.</p>
         </div>
 
@@ -53,27 +53,17 @@
             </select>
           </label>
 
-          <fieldset class="slot-fieldset">
-            <legend>Freie Termine</legend>
-            <div class="slot-grid">
-              <label class="slot-option">
-                <input type="radio" name="slot" value="Freitag, 19:00" required />
-                <span>Fr, 19:00</span>
-              </label>
-              <label class="slot-option">
-                <input type="radio" name="slot" value="Samstag, 16:30" />
-                <span>Sa, 16:30</span>
-              </label>
-              <label class="slot-option">
-                <input type="radio" name="slot" value="Samstag, 20:00" />
-                <span>Sa, 20:00</span>
-              </label>
-              <label class="slot-option">
-                <input type="radio" name="slot" value="Sonntag, 14:00" />
-                <span>So, 14:00</span>
-              </label>
-            </div>
-          </fieldset>
+          <div class="datetime-grid">
+            <label class="field">
+              <span>Datum</span>
+              <input type="date" name="date" required />
+            </label>
+
+            <label class="field">
+              <span>Uhrzeit</span>
+              <input type="time" name="time" required />
+            </label>
+          </div>
 
           <label class="field">
             <span>Kommentar oder Gegenangebot</span>

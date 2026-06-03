@@ -51,13 +51,14 @@ form?.addEventListener("submit", (event) => {
 
   const formData = new FormData(form);
   const idea = formData.get("idea");
-  const slot = formData.get("slot");
+  const date = formData.get("date");
+  const time = formData.get("time");
   const note = formData.get("note");
 
   const summary = [
     `Elvira, das sieht offiziell ziemlich nach einem Date aus.`,
     `Plan: ${idea}.`,
-    `Zeitpunkt: ${slot}.`,
+    `Zeitpunkt: ${date} um ${time}.`,
     note ? `Notiz dazu: "${note}". Das klingt sehr akzeptabel.` : "Keine Zusatznotiz. Mutig. Respekt.",
     "Naechster Schritt: kurz bestaetigen und dann glorreich charmant sein.",
   ].join(" ");
