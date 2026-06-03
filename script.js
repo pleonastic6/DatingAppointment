@@ -52,11 +52,11 @@ form?.addEventListener("submit", (event) => {
   const note = formData.get("note");
 
   const summary = [
-    `${name}, dein Antrag auf ein Date wurde mit auffallend hoher Prioritaet aufgenommen.`,
-    `Geplanter Modus: ${idea}.`,
-    `Vorgeschlagener Termin: ${slot}.`,
-    note ? `Zusatzkommentar: "${note}". Klingt verhandelbar und sympathisch.` : "Kein Zusatzkommentar. Riskant selbstbewusst, aber okay.",
-    "Naechster Schritt: kurz bestaetigen, dann romantisch effizient werden.",
+    `${name}, das sieht offiziell ziemlich nach einem Date aus.`,
+    `Plan: ${idea}.`,
+    `Zeitpunkt: ${slot}.`,
+    note ? `Notiz dazu: "${note}". Das klingt sehr akzeptabel.` : "Keine Zusatznotiz. Mutig. Respekt.",
+    "Naechster Schritt: kurz bestaetigen und dann glorreich charmant sein.",
   ].join(" ");
 
   resultText.textContent = summary;
