@@ -342,6 +342,13 @@ textarea,
   font: inherit;
 }
 
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 input,
 select,
 textarea {

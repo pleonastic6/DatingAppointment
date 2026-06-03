@@ -5,6 +5,7 @@ const noButton = document.querySelector("#no-button");
 const form = document.querySelector("#booking-form");
 const resultCard = document.querySelector("#result-card");
 const resultText = document.querySelector("#result-text");
+const dateInput = document.querySelector('input[name="date"]');
 
 let noButtonEscapes = 0;
 
@@ -46,6 +47,14 @@ yesButton?.addEventListener("click", () => {
   noButton?.addEventListener(eventName, moveNoButton, { passive: true });
 });
 
+if (dateInput) {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  dateInput.min = `${year}-${month}-${day}`;
+}
+
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -54,16 +63,49 @@ form?.addEventListener("submit", (event) => {
   const date = formData.get("date");
   const time = formData.get("time");
   const note = formData.get("note");
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton?.textContent;
 
-  const summary = [
-    `Elvira, das sieht offiziell ziemlich nach einem Date aus.`,
-    `Plan: ${idea}.`,
-    `Zeitpunkt: ${date} um ${time}.`,
-    note ? `Notiz dazu: "${note}". Das klingt sehr akzeptabel.` : "Keine Zusatznotiz. Mutig. Respekt.",
-    "Naechster Schritt: kurz bestaetigen und dann glorreich charmant sein.",
-  ].join(" ");
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Wird verschickt...";
+  }
 
-  resultText.textContent = summary;
-  resultCard.hidden = false;
-  resultCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (!data.success) {
+        throw new Error(data.message || "Formular konnte nicht verschickt werden.");
+      }
+
+      const summary = [
+        `Elvira, das sieht offiziell ziemlich nach einem Date aus.`,
+        `Plan: ${idea}.`,
+        `Zeitpunkt: ${date} um ${time}.`,
+        note ? `Notiz dazu: "${note}". Das klingt sehr akzeptabel.` : "Keine Zusatznotiz. Mutig. Respekt.",
+        `Und das Beste: Die Anfrage ist jetzt auch wirklich unterwegs.`,
+      ].join(" ");
+
+      resultText.textContent = summary;
+      resultCard.hidden = false;
+      form.reset();
+      resultCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    })
+    .catch((error) => {
+      resultText.textContent =
+        `Das Absenden hat gerade nicht geklappt. Bitte nochmal probieren. ${error.message}`;
+      resultCard.hidden = false;
+    })
+    .finally(() => {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    });
 });
