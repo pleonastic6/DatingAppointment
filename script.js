@@ -1,4 +1,5 @@
 const decisionZone = document.querySelector("#decision-zone");
+const decisionButtons = document.querySelector(".decision-buttons");
 const yesButton = document.querySelector("#yes-button");
 const noButton = document.querySelector("#no-button");
 const form = document.querySelector("#booking-form");
@@ -8,18 +9,20 @@ const resultText = document.querySelector("#result-text");
 let noButtonEscapes = 0;
 
 function moveNoButton() {
-  if (!decisionZone || !noButton) {
+  if (!decisionButtons || !noButton || !yesButton) {
     return;
   }
 
-  const zoneRect = decisionZone.getBoundingClientRect();
+  const arenaRect = decisionButtons.getBoundingClientRect();
   const buttonRect = noButton.getBoundingClientRect();
-  const padding = 8;
-  const maxX = Math.max(zoneRect.width - buttonRect.width - padding * 2, 0);
-  const maxY = Math.max(zoneRect.height - buttonRect.height - padding * 2, 0);
+  const yesRect = yesButton.getBoundingClientRect();
+  const padding = 12;
+  const safeTop = yesRect.bottom - arenaRect.top + 12;
+  const maxX = Math.max(arenaRect.width - buttonRect.width - padding * 2, 0);
+  const maxY = Math.max(arenaRect.height - buttonRect.height - safeTop - padding, 0);
 
   const nextX = Math.random() * maxX + padding;
-  const nextY = Math.random() * maxY + padding;
+  const nextY = Math.random() * maxY + safeTop;
 
   noButton.style.left = `${nextX}px`;
   noButton.style.top = `${nextY}px`;
