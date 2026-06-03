@@ -44,6 +44,26 @@ body::before {
   padding: 48px 0 64px;
 }
 
+.single-screen {
+  min-height: 100vh;
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 32px 0;
+}
+
+.invite-card {
+  width: 100%;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
 .hero-card,
 .info-panel,
 .booking-panel {
@@ -75,6 +95,15 @@ body::before {
   font-size: clamp(3rem, 8vw, 5.5rem);
 }
 
+.invite-card h1 {
+  max-width: 12ch;
+  margin: 0 auto;
+  font-family: "Fraunces", serif;
+  font-size: clamp(3.2rem, 8vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
 .eyebrow,
 .panel-kicker,
 .result-kicker,
@@ -98,6 +127,11 @@ body::before {
   font-size: 1.08rem;
   line-height: 1.6;
   color: var(--muted);
+}
+
+.invite-card .hero-copy {
+  max-width: 36rem;
+  margin: 20px auto 0;
 }
 
 .signal-row {
@@ -194,6 +228,12 @@ body::before {
     rgba(255, 249, 239, 0.92);
 }
 
+.decision-zone-large {
+  min-height: 290px;
+  margin-top: 34px;
+  text-align: left;
+}
+
 .decision-question {
   max-width: 24rem;
   margin: 0;
@@ -201,10 +241,19 @@ body::before {
   line-height: 1.45;
 }
 
+.decision-zone-large .decision-question {
+  max-width: 29rem;
+  font-size: 1.12rem;
+}
+
 .decision-buttons {
   position: relative;
   height: 130px;
   margin-top: 24px;
+}
+
+.decision-buttons-large {
+  height: 170px;
 }
 
 .yes-button,
@@ -347,6 +396,11 @@ textarea:focus {
   line-height: 1.55;
 }
 
+.booking-panel-wide {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
 @media (max-width: 900px) {
   .content-grid,
   .signal-row {
@@ -355,6 +409,10 @@ textarea:focus {
 
   .hero-card h1 {
     max-width: 100%;
+  }
+
+  .invite-card {
+    padding: 28px;
   }
 }
 

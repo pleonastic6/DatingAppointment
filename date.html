@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminwahl</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Level 2 Freigeschaltet</p>
+        <h1>Exzellent. Dann machen wir jetzt den Termin offiziell.</h1>
+        <p class="hero-copy">
+          Du hast den richtigen Button gedrueckt. Das spricht fuer Charakter,
+          Geschmack und erstaunlich gute Reaktionsfaehigkeit.
+        </p>
+      </section>
+
+      <section class="booking-panel booking-panel-wide">
+        <div class="panel-header">
+          <p class="panel-kicker">Terminwahl</p>
+          <h2>Such dir einen Slot aus</h2>
+          <p>
+            Wenn nichts passt, gern Gegenangebot. Diplomatie ist attraktiv.
+          </p>
+        </div>
+
+        <form class="booking-form" id="booking-form">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" placeholder="z. B. deine Wenigkeit" required />
+          </label>
+
+          <label class="field">
+            <span>Wunsch-Date-Idee</span>
+            <select name="idea" required>
+              <option value="">Bitte mit Stil waehlen</option>
+              <option>Kaffee und Spaziergang</option>
+              <option>Drinks mit Main-Character-Energie</option>
+              <option>Eis und unvernunftig gute Gespraeche</option>
+              <option>Arcade / Minigolf / leicht kompetitiv</option>
+            </select>
+          </label>
+
+          <fieldset class="slot-fieldset">
+            <legend>Freie Termine</legend>
+            <div class="slot-grid">
+              <label class="slot-option">
+                <input type="radio" name="slot" value="Freitag, 19:00" required />
+                <span>Fr, 19:00</span>
+              </label>
+              <label class="slot-option">
+                <input type="radio" name="slot" value="Samstag, 16:30" />
+                <span>Sa, 16:30</span>
+              </label>
+              <label class="slot-option">
+                <input type="radio" name="slot" value="Samstag, 20:00" />
+                <span>Sa, 20:00</span>
+              </label>
+              <label class="slot-option">
+                <input type="radio" name="slot" value="Sonntag, 14:00" />
+                <span>So, 14:00</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span>Kommentar oder Gegenangebot</span>
+            <textarea
+              name="note"
+              rows="4"
+              placeholder="z. B. Samstag klingt gut, aber nur wenn irgendwo Dessert involviert ist."
+            ></textarea>
+          </label>
+
+          <button class="submit-button" type="submit">Termin charmant bestaetigen</button>
+        </form>
+
+        <div class="result-card" id="result-card" hidden>
+          <p class="result-kicker">Status</p>
+          <p class="result-text" id="result-text"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,9 +1,9 @@
-const form = document.querySelector("#booking-form");
-const resultCard = document.querySelector("#result-card");
-const resultText = document.querySelector("#result-text");
 const decisionZone = document.querySelector("#decision-zone");
 const yesButton = document.querySelector("#yes-button");
 const noButton = document.querySelector("#no-button");
+const form = document.querySelector("#booking-form");
+const resultCard = document.querySelector("#result-card");
+const resultText = document.querySelector("#result-text");
 
 let noButtonEscapes = 0;
 
@@ -35,12 +35,7 @@ function moveNoButton() {
 }
 
 yesButton?.addEventListener("click", () => {
-  form.hidden = false;
-  resultCard.hidden = true;
-  yesButton.textContent = "Sehr gute Entscheidung";
-  decisionZone.querySelector(".decision-question").textContent =
-    "Stark. Dann fehlt jetzt nur noch die formale Terminbuchung.";
-  form.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.location.href = "date.html";
 });
 
 ["mouseenter", "focus", "touchstart"].forEach((eventName) => {
