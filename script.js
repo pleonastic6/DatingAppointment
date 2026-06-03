@@ -17,9 +17,10 @@ function moveNoButton() {
   const buttonRect = noButton.getBoundingClientRect();
   const yesRect = yesButton.getBoundingClientRect();
   const padding = 12;
+  const bottomPadding = 24;
   const safeTop = yesRect.bottom - arenaRect.top + 12;
   const maxX = Math.max(arenaRect.width - buttonRect.width - padding * 2, 0);
-  const maxY = Math.max(arenaRect.height - buttonRect.height - safeTop - padding, 0);
+  const maxY = Math.max(arenaRect.height - buttonRect.height - safeTop - bottomPadding, 0);
 
   const nextX = Math.random() * maxX + padding;
   const nextY = Math.random() * maxY + safeTop;
