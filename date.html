@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terminwahl</title>
+    <title>Date Termin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,33 +15,28 @@
   <body>
     <main class="page-shell">
       <section class="hero-card">
-        <p class="eyebrow">Level 2 Freigeschaltet</p>
-        <h1>Exzellent. Dann machen wir jetzt den Termin offiziell.</h1>
-        <p class="hero-copy">
-          Du hast den richtigen Button gedrueckt. Das spricht fuer Charakter,
-          Geschmack und erstaunlich gute Reaktionsfaehigkeit.
-        </p>
+        <p class="eyebrow">Level 2</p>
+        <h1>Sehr gut. Dann waehlen wir jetzt einen Termin.</h1>
+        <p class="hero-copy">Kurz aussuchen, absenden, fertig.</p>
       </section>
 
       <section class="booking-panel booking-panel-wide">
         <div class="panel-header">
           <p class="panel-kicker">Terminwahl</p>
           <h2>Such dir einen Slot aus</h2>
-          <p>
-            Wenn nichts passt, gern Gegenangebot. Diplomatie ist attraktiv.
-          </p>
+          <p>Wenn nichts passt: einfach Gegenvorschlag.</p>
         </div>
 
         <form class="booking-form" id="booking-form">
           <label class="field">
             <span>Name</span>
-            <input type="text" name="name" placeholder="z. B. deine Wenigkeit" required />
+            <input type="text" name="name" placeholder="Dein Name" required />
           </label>
 
           <label class="field">
             <span>Wunsch-Date-Idee</span>
             <select name="idea" required>
-              <option value="">Bitte mit Stil waehlen</option>
+              <option value="">Bitte waehlen</option>
               <option>Kaffee und Spaziergang</option>
               <option>Drinks mit Main-Character-Energie</option>
               <option>Eis und unvernunftig gute Gespraeche</option>
@@ -76,11 +71,11 @@
             <textarea
               name="note"
               rows="4"
-              placeholder="z. B. Samstag klingt gut, aber nur wenn irgendwo Dessert involviert ist."
+              placeholder="Optionaler Kommentar"
             ></textarea>
           </label>
 
-          <button class="submit-button" type="submit">Termin charmant bestaetigen</button>
+          <button class="submit-button" type="submit">Termin bestaetigen</button>
         </form>
 
         <div class="result-card" id="result-card" hidden>
