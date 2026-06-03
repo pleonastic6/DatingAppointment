@@ -49,13 +49,12 @@ form?.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const formData = new FormData(form);
-  const name = formData.get("name");
   const idea = formData.get("idea");
   const slot = formData.get("slot");
   const note = formData.get("note");
 
   const summary = [
-    `${name}, das sieht offiziell ziemlich nach einem Date aus.`,
+    `Elvira, das sieht offiziell ziemlich nach einem Date aus.`,
     `Plan: ${idea}.`,
     `Zeitpunkt: ${slot}.`,
     note ? `Notiz dazu: "${note}". Das klingt sehr akzeptabel.` : "Keine Zusatznotiz. Mutig. Respekt.",
