@@ -1,8 +1,6 @@
-const decisionZone = document.querySelector("#decision-zone");
-const decisionButtons = document.querySelector(".decision-buttons");
+const decisionButtons = document.querySelector("#decision-buttons");
 const yesButton = document.querySelector("#yes-button");
 const noButton = document.querySelector("#no-button");
-const form = document.querySelector("#booking-form");
 const dateInput = document.querySelector('input[name="date"]');
 
 let noButtonEscapes = 0;
@@ -16,10 +14,9 @@ function moveNoButton() {
   const buttonRect = noButton.getBoundingClientRect();
   const yesRect = yesButton.getBoundingClientRect();
   const padding = 12;
-  const bottomPadding = 24;
-  const safeTop = yesRect.bottom - arenaRect.top + 12;
+  const safeTop = yesRect.bottom - arenaRect.top + 16;
   const maxX = Math.max(arenaRect.width - buttonRect.width - padding * 2, 0);
-  const maxY = Math.max(arenaRect.height - buttonRect.height - safeTop - bottomPadding, 0);
+  const maxY = Math.max(arenaRect.height - buttonRect.height - safeTop - padding, 0);
 
   const nextX = Math.random() * maxX + padding;
   const nextY = Math.random() * maxY + safeTop;
@@ -29,11 +26,15 @@ function moveNoButton() {
   noButton.style.right = "auto";
 
   noButtonEscapes += 1;
-  if (noButtonEscapes > 5) {
-    noButton.textContent = "wirklich nein?";
+
+  if (noButtonEscapes > 2) {
+    noButton.textContent = "sicher, power move?";
   }
-  if (noButtonEscapes > 10) {
-    noButton.textContent = "der button glaubt dir nicht";
+  if (noButtonEscapes > 5) {
+    noButton.textContent = "das wirkt nicht nach Elvira";
+  }
+  if (noButtonEscapes > 8) {
+    noButton.textContent = "der button glaubt an Vodka Cranberry";
   }
 }
 

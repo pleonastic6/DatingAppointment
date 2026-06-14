@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Date?</title>
+    <title>Elvira-Only Einladung</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,35 +12,92 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main class="single-screen">
-      <section class="invite-card">
-        <div class="floating-hearts" aria-hidden="true">
-          <span>❤</span>
-          <span>❤</span>
-          <span>❤</span>
-        </div>
-        <p class="eyebrow">Incoming Date Request</p>
-        <h1>Hallo Elvira.</h1>
-        <p class="hero-copy">Ganz simpel. Nur eine kleine, wichtige Frage.</p>
-
-        <div class="gif-strip gif-strip-single" aria-label="Kitty hug gif">
-          <iframe
-            class="gif-frame"
-            src="https://tenor.com/embed/9038485966722291030"
-            allowfullscreen
-            loading="lazy"
-            title="Kitty hug gif"
-          ></iframe>
-        </div>
-
-        <div class="decision-zone decision-zone-large" id="decision-zone">
-          <p class="decision-question">Wollen wir endlich was ausmachen?</p>
-          <div class="decision-buttons decision-buttons-large">
-            <button class="yes-button" id="yes-button" type="button">Ja 💌</button>
-            <button class="no-button" id="no-button" type="button">Nein</button>
+  <body data-page="landing">
+    <main class="page-shell page-shell-landing">
+      <section class="hero-block">
+        <p class="topline">Audience: genau 1 Person</p>
+        <div class="hero-grid">
+          <div class="hero-copy-block">
+            <p class="eyebrow">Elvira Edition</p>
+            <h1>Hi Elvira. Diese Seite existiert wirklich nur fuer dich.</h1>
+            <p class="hero-copy hero-copy-strong">
+              Weil eine normale Nachricht zu wenig waere und ein random Internet-Template
+              genau der falsche Vibe ist.
+            </p>
+            <p class="hero-copy">
+              Also ja: Artur hat sich tatsaechlich hingesetzt und dir eine eigene kleine
+              Einladung gebaut. Leicht unnoetig. Aber genau deshalb irgendwie gut.
+            </p>
           </div>
+
+          <aside class="proof-card">
+            <p class="proof-kicker">Beweislage</p>
+            <ul class="proof-list">
+              <li>Dein Name ist ueberall drin.</li>
+              <li>Der Ton ist viel zu spezifisch fuer Copy-Paste.</li>
+              <li>Diese Seite hat exakt einen Zielmenschen: dich.</li>
+              <li>Vodka Cranberry, Jaegermeister und Bier sind kein random SEO-Text.</li>
+            </ul>
+            <div class="build-stamp">
+              <span class="build-label">Build</span>
+              <strong>ELVIRA-ONLY v1.0</strong>
+            </div>
+          </aside>
         </div>
+      </section>
+
+      <section class="message-band">
+        <div class="message-card">
+          <p class="message-label">Die eigentliche Frage</p>
+          <p class="message-text">
+            Ich wuerde sehr gerne mit dir auf ein Date gehen. Ohne kryptische Andeutungen,
+            ohne halb ironisches Rumgeeier. Einfach klar.
+          </p>
+        </div>
+        <div class="message-card accent-card">
+          <p class="message-label">Wichtige Randnotiz</p>
+          <p class="message-text">
+            Falls du dachtest, das hier sei ein Massenprodukt: nope. Viel zu viel Aufwand
+            fuer einen Streuwurf und viel zu sehr auf eine Frau zugeschnitten, die
+            Power Moves ausstrahlt.
+          </p>
+        </div>
+      </section>
+
+      <section class="detail-strip">
+        <div class="detail-card">
+          <span class="detail-label">Known Facts</span>
+          <strong>Vodka Cranberry ist ein valider Weg.</strong>
+        </div>
+        <div class="detail-card">
+          <span class="detail-label">Known Facts</span>
+          <strong>Jaegermeister ebenfalls. Bier sowieso.</strong>
+        </div>
+        <div class="detail-card">
+          <span class="detail-label">Observed Vibe</span>
+          <strong>Null NPC-Energie. Eher Power Move.</strong>
+        </div>
+      </section>
+
+      <section class="decision-panel" id="decision-zone">
+        <div class="decision-header">
+          <p class="eyebrow">Jetzt wird's konkret</p>
+          <h2>Hast du Lust, dass wir das wirklich mal machen?</h2>
+          <p>
+            Der ehrliche Button ist sehr einfach. Der andere fuehlt sich hier aus Prinzip
+            unwillkommen. Und ganz ehrlich: zu deinem Vibe passt sowieso eher ein
+            selbstbewusstes Ja als ein schuechternes Wegducken.
+          </p>
+        </div>
+
+        <div class="decision-buttons" id="decision-buttons">
+          <button class="yes-button" id="yes-button" type="button">Ja, hab ich</button>
+          <button class="no-button" id="no-button" type="button">nee</button>
+        </div>
+
+        <p class="micro-note">
+          Falls du nicht Elvira bist, bist du in der falschen Seite gelandet. Pech gehabt.
+        </p>
       </section>
     </main>
 
