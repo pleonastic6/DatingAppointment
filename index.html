@@ -16,25 +16,33 @@
     <main class="page">
       <section class="panel">
         <p class="eyebrow">work in progress</p>
-        <h1>Eine Textbox. Mehr brauchen wir gerade nicht.</h1>
+        <h1>Eine flexible Flaeche fuer den Inhalt. Sonst nichts.</h1>
         <p class="intro">
-          Alles andere war zu viel. Wir bauen das jetzt langsam und fuellen den Inhalt
-          Schritt fuer Schritt.
+          Kein Formular, kein Fragebogen, kein UI-Theater. Nur ein sauberer Container,
+          den wir nach und nach mit gutem Text fuellen.
         </p>
 
-        <label class="editor" for="draft">
-          <span>Text</span>
-          <textarea
-            id="draft"
-            name="draft"
-            rows="14"
-            placeholder="Hier kommt der Text rein. Erst roh, dann gut."
-            autofocus
-          ></textarea>
-        </label>
+        <section class="content-box">
+          <div class="content-block content-block-lead">
+            <p class="content-label">Auftakt</p>
+            <p>
+              Hier kommt spaeter der erste starke Satz hin. Kurz, direkt, nicht peinlich.
+            </p>
+          </div>
+
+          <div class="content-grid">
+            <article class="content-card">
+              <p class="content-label">Block 1</p>
+              <p>Platz fuer einen persoenlichen Gedanken oder eine Einladung.</p>
+            </article>
+
+            <article class="content-card">
+              <p class="content-label">Block 2</p>
+              <p>Platz fuer eine zweite Idee, einen Vergleich oder eine Pointe.</p>
+            </article>
+          </div>
+        </section>
       </section>
     </main>
-
-    <script src="script.js"></script>
   </body>
 </html>
