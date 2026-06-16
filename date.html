@@ -2,120 +2,14 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=./index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elvira waehlt den Termin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <title>Weiterleitung</title>
+    <script>
+      window.location.replace("./index.html");
+    </script>
   </head>
-  <body data-page="booking">
-    <main class="page-shell">
-      <section class="booking-hero">
-        <div class="booking-hero-copy">
-          <p class="eyebrow">Bestanden: Teil 1</p>
-          <h1>Sehr stark, Elvira.</h1>
-          <p class="hero-copy hero-copy-strong">
-            Dann machen wir jetzt aus der charmant ueberproduzierten Einladung einfach einen
-            echten Plan.
-          </p>
-          <p class="hero-copy">
-            Such dir was aus, was dir wirklich taugt. Ich richte mich danach und geb dann
-            sauber Rueckmeldung.
-          </p>
-        </div>
-
-        <div class="booking-sidecard">
-          <p class="sidecard-label">Notiz von Artur</p>
-          <p>
-            Ja, diese Unterseite wurde auch extra angepasst. Wir ziehen das hier jetzt
-            konsequent durch. Ein normaler Streuwurf haette diese Karte nicht und
-            auch keine Drink-Read auf dich.
-          </p>
-        </div>
-      </section>
-
-      <section class="booking-panel booking-panel-wide booking-panel-personal">
-        <div class="panel-header">
-          <p class="panel-kicker">Terminwahl fuer Elvira</p>
-          <h2>Worauf haettest du am ehesten Lust?</h2>
-          <p>Kein Theater, kein Rate-Spiel. Einfach dein Favorit plus Zeitpunkt.</p>
-        </div>
-
-        <div class="personal-callout">
-          <p>
-            Bonuspunkt fuer Ehrlichkeit: Wenn das Date mit einem Vodka Cranberry, einem
-            Bier oder einem frechen Jaegermeister besser wird, darf diese Information sehr
-            gerne strategisch eingesetzt werden.
-          </p>
-        </div>
-
-        <form
-          class="booking-form"
-          id="booking-form"
-          action="https://formsubmit.co/artur.renner6@gmail.com"
-          method="POST"
-        >
-          <input type="hidden" name="_subject" value="Elvira hat auf die Date-Seite geantwortet" />
-          <input type="hidden" name="_template" value="table" />
-          <input
-            type="hidden"
-            name="_next"
-            value="https://pleonastic6.github.io/DatingAppointment/thanks.html"
-          />
-          <input type="hidden" name="recipient" value="Elvira" />
-
-          <label class="field">
-            <span>Date-Idee</span>
-            <select name="idea" required>
-              <option value="">Bitte auswaehlen</option>
-              <option>Kaffee und entspannter Spaziergang</option>
-              <option>Drinks irgendwo mit guter Atmosphaere</option>
-              <option>Eine Bar, in der Vodka Cranberry absolut okay ist</option>
-              <option>Eis, Rumlaufen, gute Gespraeche</option>
-              <option>Etwas mit leichter Competition</option>
-              <option>Ein kleiner Power-Move-Abend mit Drinks</option>
-              <option>Ich hab eine bessere Idee</option>
-            </select>
-          </label>
-
-          <div class="datetime-grid">
-            <label class="field">
-              <span>Datum</span>
-              <input type="date" name="date" required />
-            </label>
-
-            <label class="field">
-              <span>Uhrzeit</span>
-              <input type="time" name="time" required />
-            </label>
-          </div>
-
-          <label class="field">
-            <span>Kommentar / bessere Idee / kleine Warnung</span>
-            <textarea
-              name="note"
-              rows="4"
-              placeholder="z. B. Freitag klingt gut, aber nur mit Drinks und einem kleinen Power Move"
-            ></textarea>
-          </label>
-
-          <input
-            type="text"
-            name="_honey"
-            tabindex="-1"
-            autocomplete="off"
-            class="honeypot-field"
-          />
-
-          <button class="submit-button" type="submit">An Artur schicken</button>
-        </form>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
+  <body>
+    <p>Weiterleitung zur aktuellen Einladung...</p>
   </body>
 </html>

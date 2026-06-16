@@ -1,55 +1,39 @@
-const decisionButtons = document.querySelector("#decision-buttons");
 const yesButton = document.querySelector("#yes-button");
-const noButton = document.querySelector("#no-button");
-const dateInput = document.querySelector('input[name="date"]');
+const moreButton = document.querySelector("#more-button");
+const extraPanel = document.querySelector("#extra-panel");
+const replyCard = document.querySelector("#reply-card");
+const replyTitle = document.querySelector("#reply-title");
+const replyCopy = document.querySelector("#reply-copy");
+const intentInput = document.querySelector("#intent-input");
 
-let noButtonEscapes = 0;
-
-function moveNoButton() {
-  if (!decisionButtons || !noButton || !yesButton) {
+function revealReply(intent) {
+  if (!replyCard || !intentInput || !replyTitle || !replyCopy) {
     return;
   }
 
-  const arenaRect = decisionButtons.getBoundingClientRect();
-  const buttonRect = noButton.getBoundingClientRect();
-  const yesRect = yesButton.getBoundingClientRect();
-  const padding = 12;
-  const safeTop = yesRect.bottom - arenaRect.top + 16;
-  const maxX = Math.max(arenaRect.width - buttonRect.width - padding * 2, 0);
-  const maxY = Math.max(arenaRect.height - buttonRect.height - safeTop - padding, 0);
+  intentInput.value = intent;
 
-  const nextX = Math.random() * maxX + padding;
-  const nextY = Math.random() * maxY + safeTop;
-
-  noButton.style.left = `${nextX}px`;
-  noButton.style.top = `${nextY}px`;
-  noButton.style.right = "auto";
-
-  noButtonEscapes += 1;
-
-  if (noButtonEscapes > 2) {
-    noButton.textContent = "sicher, power move?";
+  if (intent === "more") {
+    replyTitle.textContent = "Fair. Dann sag mir, was fuer dich gut klingen wuerde.";
+    replyCopy.textContent =
+      "Du musst dich nicht sofort festlegen. Ein grober Favorit oder ein kurzer Kommentar reicht.";
+  } else {
+    replyTitle.textContent = "Dann sag mir kurz, worauf du Lust haettest.";
+    replyCopy.textContent =
+      "Ein kurzer Favorit und ein grober Zeitpunkt reichen vollkommen.";
   }
-  if (noButtonEscapes > 5) {
-    noButton.textContent = "das wirkt nicht nach Elvira";
-  }
-  if (noButtonEscapes > 8) {
-    noButton.textContent = "der button glaubt an Vodka Cranberry";
-  }
+
+  replyCard.hidden = false;
+  replyCard.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 yesButton?.addEventListener("click", () => {
-  window.location.href = "date.html";
+  revealReply("yes");
 });
 
-["mouseenter", "focus", "touchstart"].forEach((eventName) => {
-  noButton?.addEventListener(eventName, moveNoButton, { passive: true });
+moreButton?.addEventListener("click", () => {
+  if (extraPanel) {
+    extraPanel.hidden = false;
+  }
+  revealReply("more");
 });
-
-if (dateInput) {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-  dateInput.min = `${year}-${month}-${day}`;
-}
