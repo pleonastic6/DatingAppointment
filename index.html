@@ -3,133 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eine kleine Einladung fuer Elvira</title>
+    <title>Ein kleiner Fragebogen fuer Elvira</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="page-shell">
-      <section class="hero-card">
-        <p class="eyebrow">Eine Seite fuer genau eine Person</p>
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <h1>Hi Elvira. Ich wollte dich nicht mit einer normalen Nachricht fragen.</h1>
-            <p class="lead">
-              Also habe ich dir eine kleine Seite gebaut. Kurz gesagt: Ich wuerde sehr
-              gern mit dir auf ein Date gehen.
-            </p>
-            <p class="body-copy">
-              Nicht als ueberspielter Gag und nicht halb ironisch, sondern ziemlich
-              ehrlich. Du wirkst auf mich wie jemand, mit dem ein Abend sofort
-              interessanter wird.
-            </p>
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="kicker">private edition</p>
+          <h1>Ich dachte, ein kleiner Fragebogen waere charmanter als eine plumpe Frage.</h1>
+          <p class="intro">
+            Also nicht ganz "Willst du mit mir auf ein Date?", sondern eher:
+            <em>Wie genau wuerde ein gutes Date mit dir eigentlich aussehen?</em>
+          </p>
+          <p class="intro-subtle">
+            Das hier ist halb Einladung, halb neugierige Annaeherung und deutlich besser
+            als irgendein austauschbarer Textbaustein.
+          </p>
+        </div>
+
+        <aside class="hero-aside">
+          <p class="aside-label">Die Idee</p>
+          <ul class="aside-list">
+            <li>Kein uebertriebenes Theater.</li>
+            <li>Lieber Geschmack als Kitsch.</li>
+            <li>Ein paar ehrliche Vergleiche statt peinlicher Standardfragen.</li>
+          </ul>
+          <div class="hero-tag">
+            <span>Mode</span>
+            <strong>questionnaire, not cringe</strong>
           </div>
-
-          <aside class="hero-sidecard">
-            <p class="side-label">Warum ueberhaupt diese Seite?</p>
-            <ul class="side-list">
-              <li>Weil eine Copy-Paste-Nachricht zu billig gewesen waere.</li>
-              <li>Weil ich lieber klar frage als kryptisch herumzueiern.</li>
-              <li>Weil etwas Aufwand hier ehrlicher wirkt als ein halbgarer Move.</li>
-            </ul>
-            <div class="stamp">
-              <span>Build</span>
-              <strong>ELVIRA INVITE 2.0</strong>
-            </div>
-          </aside>
-        </div>
+        </aside>
       </section>
 
-      <section class="note-band">
-        <article class="note-card">
-          <p class="note-label">Was ich mir vorstelle</p>
-          <p>
-            Etwas entspanntes. Gute Gespraeche, angenehme Atmosphaere, kein ueberladenes
-            Programm. Kaffee, Drinks oder ein Spaziergang mit anschliessendem Einkehren
-            waeren alles sehr valide Optionen.
-          </p>
+      <section class="comparison-strip">
+        <article class="comparison-card">
+          <span class="comparison-label">eher nicht</span>
+          <strong>laute Show, zu viel Programm, seltsame Spielchen</strong>
         </article>
-        <article class="note-card note-card-accent">
-          <p class="note-label">Worauf ich keine Lust habe</p>
-          <p>
-            Auf Spielchen, ueberdrehte Selbstdarstellung oder irgendeinen "lustigen"
-            Trick. Lieber direkt, charmant und normal gut.
-          </p>
+        <article class="comparison-card comparison-card-accent">
+          <span class="comparison-label">eher ja</span>
+          <strong>Atmosphaere, Witz, echte Chemie und ein guter Abend</strong>
         </article>
       </section>
 
-      <section class="reasons-card">
+      <section class="questionnaire-panel" id="questionnaire">
         <div class="section-head">
-          <p class="eyebrow">In zwei Gruenden</p>
-          <h2>Warum ich dich fragen wollte</h2>
-        </div>
-        <div class="reasons-grid">
-          <article class="reason">
-            <span class="reason-index">01</span>
-            <h3>Du wirkst praesent.</h3>
-            <p>
-              Nicht beliebig, nicht austauschbar, nicht nach Autopilot. Eher wie jemand,
-              der einen Raum bemerkt und nicht nur durchlaeuft.
-            </p>
-          </article>
-          <article class="reason">
-            <span class="reason-index">02</span>
-            <h3>Mit dir waere ein Abend wahrscheinlich einfach gut.</h3>
-            <p>
-              Ohne grossen Zirkus. Einfach eine gute Mischung aus Leichtigkeit, Witz und
-              echtem Gespraech.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="decision-card" id="decision">
-        <div class="section-head">
-          <p class="eyebrow">Die eigentliche Frage</p>
-          <h2>Haettest du Lust darauf?</h2>
+          <p class="kicker">fuer genau eine person</p>
+          <h2>Ein paar schnelle Fragen</h2>
           <p class="section-copy">
-            Wenn ja, sag einfach ja. Wenn du erst mehr Kontext willst, ist das auch
-            voellig fair.
-          </p>
-        </div>
-
-        <div class="cta-row">
-          <button class="primary-button" id="yes-button" type="button">Ja, gern</button>
-          <button class="secondary-button" id="more-button" type="button">
-            Erzaehl mir mehr
-          </button>
-        </div>
-
-        <div class="extra-panel" id="extra-panel" hidden>
-          <p class="extra-label">Mehr Kontext</p>
-          <p>
-            Mein Ideal waere etwas unkompliziertes: ein Abend, bei dem man merkt, ob die
-            Chemie auch ausserhalb kurzer Begegnungen gut funktioniert. Nicht maximal
-            spektakulaer, sondern angenehm gut.
-          </p>
-        </div>
-      </section>
-
-      <section class="reply-card" id="reply-card" hidden>
-        <div class="section-head">
-          <p class="eyebrow">Rueckmeldung</p>
-          <h2 id="reply-title">Dann sag mir kurz, worauf du Lust haettest.</h2>
-          <p class="section-copy" id="reply-copy">
-            Ein kurzer Favorit und ein grober Zeitpunkt reichen vollkommen.
+            Nichts Wissenschaftliches. Ich will nur wissen, welche Version von
+            "mit dir ausgehen" am ehesten die richtige waere.
           </p>
         </div>
 
         <form
-          class="reply-form"
+          class="questionnaire-form"
           action="https://formsubmit.co/artur.renner6@gmail.com"
           method="POST"
         >
-          <input type="hidden" name="_subject" value="Antwort von Elvira auf die Einladung" />
+          <input type="hidden" name="_subject" value="Elvira hat den Date-Fragebogen beantwortet" />
           <input type="hidden" name="_template" value="table" />
           <input
             type="hidden"
@@ -137,36 +76,130 @@
             value="https://pleonastic6.github.io/DatingAppointment/thanks.html"
           />
           <input type="hidden" name="recipient" value="Elvira" />
-          <input type="hidden" name="intent" id="intent-input" value="yes" />
+
+          <fieldset class="question-block">
+            <legend>1. Was klingt fuer dich sofort besser?</legend>
+            <div class="option-grid option-grid-two">
+              <label class="choice-card">
+                <input type="radio" name="format" value="drinks" required />
+                <span class="choice-title">Drinks mit guter Atmosphaere</span>
+                <span class="choice-copy">Mehr Abend, mehr Vibe, weniger Pflichtprogramm.</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="format" value="coffee_walk" required />
+                <span class="choice-title">Kaffee und Spaziergang</span>
+                <span class="choice-copy">Entspannt, leicht und gut zum Reden.</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question-block">
+            <legend>2. Welcher Ton passt eher zu dir?</legend>
+            <div class="option-grid option-grid-two">
+              <label class="choice-card">
+                <input type="radio" name="vibe" value="playful" required />
+                <span class="choice-title">Leicht verspielt</span>
+                <span class="choice-copy">Ein bisschen frech, aber mit Stil.</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="vibe" value="calm" required />
+                <span class="choice-title">Ruhig und klar</span>
+                <span class="choice-copy">Weniger Show, mehr echte Ruhe.</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question-block">
+            <legend>3. Wenn der Abend gut laeuft, was waere ein gutes Setting?</legend>
+            <div class="option-grid option-grid-three">
+              <label class="choice-card">
+                <input type="radio" name="setting" value="bar" required />
+                <span class="choice-title">Bar</span>
+                <span class="choice-copy">gedimmtes Licht, gute Drinks, keine Eile</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="setting" value="outside" required />
+                <span class="choice-title">Draussen unterwegs</span>
+                <span class="choice-copy">laufen, reden, spontan irgendwo landen</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="setting" value="mixed" required />
+                <span class="choice-title">Erst das eine, dann das andere</span>
+                <span class="choice-copy">die elegante Kombi statt starrem Plan</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question-block">
+            <legend>4. Welche Aussage trifft eher zu?</legend>
+            <div class="option-grid option-grid-two">
+              <label class="choice-card">
+                <input type="radio" name="energy" value="structured" required />
+                <span class="choice-title">Ich mag einen klaren Plan</span>
+                <span class="choice-copy">Dann ist vorher schon halb der Vibe gesetzt.</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="energy" value="spontaneous" required />
+                <span class="choice-title">Ich mag es eher spontan</span>
+                <span class="choice-copy">Zu viel Planung macht es schnell unromantisch.</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question-block">
+            <legend>5. Rein atmosphaerisch: was klingt richtiger?</legend>
+            <div class="option-grid option-grid-three">
+              <label class="choice-card">
+                <input type="radio" name="drink_vibe" value="wine" required />
+                <span class="choice-title">Etwas stilvoll</span>
+                <span class="choice-copy">ruhig, schoen, fast filmisch</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="drink_vibe" value="cocktail" required />
+                <span class="choice-title">Cocktail-Bar-Energie</span>
+                <span class="choice-copy">leicht glamouroes, aber nicht affig</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="drink_vibe" value="simple" required />
+                <span class="choice-title">Ganz unkompliziert</span>
+                <span class="choice-copy">hauptsache gute Gesellschaft, Rest zweitrangig</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question-block">
+            <legend>6. Und jetzt ganz direkt: haettest du prinzipiell Lust?</legend>
+            <div class="option-grid option-grid-two">
+              <label class="choice-card choice-card-strong">
+                <input type="radio" name="interest" value="yes" required />
+                <span class="choice-title">Ja, klingt gut</span>
+                <span class="choice-copy">Dann muss man nur noch die schoene Variante davon finden.</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="interest" value="maybe" required />
+                <span class="choice-title">Vielleicht, erzaehl mir mehr</span>
+                <span class="choice-copy">Auch fair. Gute Dinge duerfen Kontext haben.</span>
+              </label>
+            </div>
+          </fieldset>
 
           <label class="field">
-            <span>Worauf haettest du am ehesten Lust?</span>
-            <select name="idea" required>
-              <option value="">Bitte auswaehlen</option>
-              <option value="coffee-walk">Kaffee und Spaziergang</option>
-              <option value="drinks">Drinks in entspannter Atmosphaere</option>
-              <option value="bar">Eine Bar mit guten Gespraechen</option>
-              <option value="open">Ich bin offen, Hauptsache guter Vibe</option>
-            </select>
+            <span>Falls du magst: Welche Date-Idee waere dein persoenlicher Favorit?</span>
+            <textarea
+              name="favorite_idea"
+              rows="4"
+              placeholder="z. B. erst spazieren, dann irgendwo hinsetzen und in Ruhe reden"
+            ></textarea>
           </label>
 
           <label class="field">
-            <span>Wann wuerde es dir grob passen?</span>
+            <span>Und wann waere dein Zeitfenster eher?</span>
             <input
               type="text"
               name="timing"
-              placeholder="z. B. eher unter der Woche abends oder am Wochenende"
+              placeholder="z. B. unter der Woche abends oder lieber am Wochenende"
               required
             />
-          </label>
-
-          <label class="field">
-            <span>Wenn du magst: kurze Notiz</span>
-            <textarea
-              name="note"
-              rows="4"
-              placeholder="z. B. klingt gut, aber lieber entspannt und ohne grosses Programm"
-            ></textarea>
           </label>
 
           <input
@@ -177,7 +210,7 @@
             class="honeypot-field"
           />
 
-          <button class="submit-button" type="submit">An Artur schicken</button>
+          <button class="submit-button" type="submit">Antwort abschicken</button>
         </form>
       </section>
     </main>
