@@ -118,6 +118,11 @@ h1 {
   min-height: 180px;
 }
 
+.embed-block {
+  min-height: 0;
+  padding: 14px;
+}
+
 .content-block-lead {
   display: flex;
   flex-direction: column;
@@ -152,6 +157,14 @@ h1 {
   font-size: 1rem;
   line-height: 1.72;
   color: var(--ink);
+}
+
+.spotify-embed {
+  display: block;
+  width: 100%;
+  min-height: 352px;
+  border: 0;
+  border-radius: 18px;
 }
 
 .button-row {
