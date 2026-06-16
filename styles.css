@@ -1,18 +1,14 @@
 :root {
-  --bg: #f3ede6;
-  --bg-2: #e5d6c6;
-  --ink: #201717;
-  --ink-soft: #5f4e49;
-  --panel: rgba(255, 250, 245, 0.78);
-  --panel-strong: rgba(255, 252, 248, 0.94);
-  --line: rgba(58, 37, 32, 0.12);
-  --accent: #9d4b39;
-  --accent-2: #d6a369;
-  --accent-soft: rgba(157, 75, 57, 0.1);
-  --shadow: 0 22px 60px rgba(69, 40, 30, 0.12);
-  --radius-xl: 36px;
-  --radius-lg: 24px;
-  --radius-md: 18px;
+  --bg: #f4efe8;
+  --bg-deep: #e7dbcf;
+  --paper: rgba(255, 251, 247, 0.82);
+  --paper-strong: rgba(255, 252, 249, 0.96);
+  --ink: #1f1816;
+  --muted: #685752;
+  --line: rgba(56, 35, 30, 0.12);
+  --accent: #a4573f;
+  --shadow: 0 28px 70px rgba(70, 44, 36, 0.14);
+  --radius: 32px;
 }
 
 * {
@@ -29,9 +25,9 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 12% 16%, rgba(157, 75, 57, 0.15), transparent 22%),
-    radial-gradient(circle at 88% 82%, rgba(214, 163, 105, 0.28), transparent 28%),
-    linear-gradient(180deg, var(--bg), var(--bg-2));
+    radial-gradient(circle at top left, rgba(164, 87, 63, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(208, 177, 145, 0.35), transparent 30%),
+    linear-gradient(180deg, var(--bg), var(--bg-deep));
 }
 
 body::before {
@@ -39,401 +35,119 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(rgba(32, 23, 23, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(32, 23, 23, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.48), transparent);
+    linear-gradient(rgba(31, 24, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 24, 22, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.42), transparent);
   pointer-events: none;
 }
 
-.page-shell,
-.single-screen {
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-.page-shell {
-  padding: 34px 0 48px;
-}
-
-.single-screen {
+.page {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 32px 0;
+  padding: 24px;
 }
 
-.hero-panel,
-.questionnaire-panel,
-.thanks-card {
+.panel {
+  width: min(860px, 100%);
+  padding: 32px;
   border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.18)),
-    var(--panel);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.24)),
+    var(--paper);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
 }
 
-.hero-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-  gap: 20px;
-  padding: 30px;
-}
-
-.kicker,
-.aside-label,
-.comparison-label {
+.eyebrow {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--accent);
 }
 
-.hero-copy h1,
-.section-head h2,
-.thanks-card h1 {
-  margin: 0;
+h1 {
+  margin: 14px 0 0;
+  max-width: 10ch;
   font-family: "Instrument Serif", serif;
+  font-size: clamp(3rem, 8vw, 5.8rem);
   font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-}
-
-.hero-copy h1 {
-  margin-top: 14px;
-  max-width: 11ch;
-  font-size: clamp(3.4rem, 8vw, 6.2rem);
-}
-
-.section-head h2,
-.thanks-card h1 {
-  font-size: clamp(2.4rem, 5vw, 4.3rem);
-}
-
-.intro,
-.intro-subtle,
-.section-copy,
-.aside-list,
-.comparison-card strong,
-.choice-copy,
-.field textarea,
-.field input,
-.thanks-card p {
-  line-height: 1.65;
+  line-height: 0.94;
+  letter-spacing: -0.05em;
 }
 
 .intro {
   margin: 18px 0 0;
-  max-width: 39rem;
-  font-size: 1.08rem;
-  color: var(--ink);
+  max-width: 40rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--muted);
 }
 
-.intro em {
-  font-style: italic;
-  color: var(--accent);
-}
-
-.intro-subtle,
-.section-copy {
-  margin: 14px 0 0;
-  max-width: 38rem;
-  color: var(--ink-soft);
-}
-
-.hero-aside,
-.comparison-card,
-.choice-card,
-.thanks-badge {
-  border: 1px solid rgba(58, 37, 32, 0.1);
-  background: var(--panel-strong);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
-}
-
-.hero-aside {
-  border-radius: var(--radius-lg);
-  padding: 22px;
-}
-
-.aside-list {
-  margin: 16px 0 0;
-  padding-left: 18px;
-  color: var(--ink-soft);
-}
-
-.aside-list li + li {
-  margin-top: 10px;
-}
-
-.hero-tag {
-  margin-top: 22px;
-  padding: 16px 18px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(157, 75, 57, 0.1), rgba(214, 163, 105, 0.16));
-}
-
-.hero-tag span,
-.thanks-badge span {
+.editor {
   display: block;
-  font-size: 0.72rem;
+  margin-top: 28px;
+}
+
+.editor span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--ink-soft);
+  color: var(--muted);
 }
 
-.hero-tag strong,
-.thanks-badge strong {
-  display: block;
-  margin-top: 6px;
-  line-height: 1.4;
-}
-
-.comparison-strip {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.comparison-card {
-  border-radius: 24px;
-  padding: 20px;
-}
-
-.comparison-card strong {
-  display: block;
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.comparison-card-accent {
-  background:
-    linear-gradient(135deg, rgba(157, 75, 57, 0.08), rgba(255, 250, 245, 0.98)),
-    var(--panel-strong);
-}
-
-.questionnaire-panel {
-  margin-top: 18px;
-  padding: 30px;
-}
-
-.questionnaire-form {
-  display: grid;
-  gap: 18px;
-  margin-top: 24px;
-}
-
-.question-block {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.question-block legend,
-.field span {
-  margin-bottom: 12px;
-  display: block;
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.option-grid {
-  display: grid;
-  gap: 14px;
-}
-
-.option-grid-two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.option-grid-three {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.choice-card {
-  position: relative;
-  display: block;
-  min-height: 176px;
-  padding: 20px;
-  border-radius: 24px;
-  cursor: pointer;
-  transition:
-    transform 0.16s ease,
-    border-color 0.16s ease,
-    box-shadow 0.16s ease,
-    background 0.16s ease;
-}
-
-.choice-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(157, 75, 57, 0.24);
-}
-
-.choice-card input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.choice-card.is-selected {
-  border-color: rgba(157, 75, 57, 0.42);
-  background:
-    linear-gradient(180deg, rgba(157, 75, 57, 0.08), rgba(255, 252, 248, 0.96)),
-    var(--panel-strong);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.82),
-    0 18px 34px rgba(69, 40, 30, 0.08);
-}
-
-.choice-card-strong.is-selected {
-  background:
-    linear-gradient(180deg, rgba(157, 75, 57, 0.16), rgba(255, 252, 248, 0.98)),
-    var(--panel-strong);
-}
-
-.choice-title {
-  display: block;
-  font-family: "Instrument Serif", serif;
-  font-size: 1.9rem;
-  line-height: 0.98;
-  letter-spacing: -0.03em;
-}
-
-.choice-copy {
-  display: block;
-  margin-top: 12px;
-  color: var(--ink-soft);
-}
-
-.field {
-  display: grid;
-  gap: 8px;
-}
-
-.field input,
-.field textarea {
+textarea {
   width: 100%;
-  border: 1px solid rgba(58, 37, 32, 0.12);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.68);
+  min-height: 360px;
+  padding: 24px 22px;
+  border: 1px solid rgba(56, 35, 30, 0.14);
+  border-radius: 24px;
+  background: var(--paper-strong);
   color: var(--ink);
   font: inherit;
-  padding: 16px 18px;
-  outline: none;
-}
-
-.field input:focus,
-.field textarea:focus {
-  border-color: rgba(157, 75, 57, 0.44);
-  box-shadow: 0 0 0 3px rgba(157, 75, 57, 0.11);
-}
-
-.field textarea {
+  font-size: 1.02rem;
+  line-height: 1.7;
   resize: vertical;
-  min-height: 140px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    transform 140ms ease;
 }
 
-.submit-button,
-.back-link {
-  appearance: none;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  font: inherit;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+textarea::placeholder {
+  color: rgba(104, 87, 82, 0.72);
 }
 
-.submit-button {
-  min-height: 62px;
-  padding: 0 24px;
-  background: var(--ink);
-  color: #fff8f2;
-  box-shadow: 0 14px 34px rgba(32, 23, 23, 0.18);
-}
-
-.submit-button:hover,
-.back-link:hover {
+textarea:focus {
+  border-color: rgba(164, 87, 63, 0.52);
+  box-shadow:
+    0 0 0 4px rgba(164, 87, 63, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
   transform: translateY(-1px);
 }
 
-.honeypot-field {
-  position: absolute;
-  left: -9999px;
-}
-
-.thanks-card {
-  width: 100%;
-  padding: 34px 30px;
-}
-
-.thanks-badge-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.thanks-badge {
-  padding: 18px;
-  border-radius: 20px;
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 24px;
-  min-height: 52px;
-  padding: 0 22px;
-  background: rgba(255, 255, 255, 0.48);
-  color: var(--ink);
-  border-color: rgba(58, 37, 32, 0.12);
-  text-decoration: none;
-}
-
-@media (max-width: 860px) {
-  .page-shell,
-  .single-screen {
-    width: min(100% - 20px, 1120px);
-  }
-
-  .page-shell {
-    padding: 20px 0 38px;
-  }
-
-  .hero-panel,
-  .comparison-strip,
-  .option-grid-two,
-  .option-grid-three,
-  .thanks-badge-row {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-panel,
-  .questionnaire-panel,
-  .thanks-card {
-    border-radius: 28px;
+@media (max-width: 720px) {
+  .panel {
     padding: 22px;
+    border-radius: 24px;
   }
 
-  .hero-copy h1 {
-    font-size: clamp(2.9rem, 14vw, 4.5rem);
+  h1 {
+    max-width: none;
+    font-size: clamp(2.5rem, 14vw, 4rem);
   }
 
-  .section-head h2,
-  .thanks-card h1 {
-    font-size: clamp(2.3rem, 10vw, 3.4rem);
-  }
-
-  .choice-card {
-    min-height: 0;
+  textarea {
+    min-height: 300px;
+    padding: 18px;
   }
 }

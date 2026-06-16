@@ -1,17 +1,11 @@
-const choiceInputs = document.querySelectorAll('.choice-card input[type="radio"]');
+const textarea = document.querySelector("#draft");
 
-function syncChoiceStates() {
-  document.querySelectorAll(".choice-card").forEach((card) => {
-    const input = card.querySelector('input[type="radio"]');
-    if (!input) {
-      return;
-    }
-    card.classList.toggle("is-selected", input.checked);
-  });
+if (textarea) {
+  const resize = () => {
+    textarea.style.height = "auto";
+    textarea.style.height = `${Math.max(textarea.scrollHeight, 360)}px`;
+  };
+
+  textarea.addEventListener("input", resize);
+  resize();
 }
-
-choiceInputs.forEach((input) => {
-  input.addEventListener("change", syncChoiceStates);
-});
-
-syncChoiceStates();
