@@ -123,6 +123,60 @@ h1 {
   padding: 14px;
 }
 
+.music-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.music-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.music-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.embed-shell {
+  display: flex;
+}
+
+.embed-frame {
+  position: relative;
+  width: 100%;
+  padding: 46px 16px 16px;
+  border: 1px solid rgba(56, 35, 30, 0.12);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(164, 87, 63, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(247, 239, 232, 0.92));
+  box-shadow:
+    0 18px 40px rgba(70, 44, 36, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+.embed-chip {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(31, 24, 22, 0.06);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .content-block-lead {
   display: flex;
   flex-direction: column;
@@ -162,9 +216,10 @@ h1 {
 .spotify-embed {
   display: block;
   width: 100%;
-  min-height: 352px;
+  min-height: 432px;
   border: 0;
-  border-radius: 18px;
+  border-radius: 22px;
+  background: #121212;
 }
 
 .button-row {
@@ -230,6 +285,15 @@ h1 {
   .content-card {
     min-height: 0;
     padding: 18px;
+  }
+
+  .music-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .embed-frame {
+    padding: 42px 12px 12px;
+    border-radius: 22px;
   }
 
   .button-row {
