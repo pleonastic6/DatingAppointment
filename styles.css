@@ -91,6 +91,7 @@ h1 {
   font-weight: 600;
   line-height: 0.9;
   letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
 .copy-stack {
@@ -114,19 +115,71 @@ h1 {
 }
 
 @media (max-width: 640px) {
+  body::before {
+    background-size: 32px 32px;
+  }
+
   .onepager {
-    padding: 18px;
+    align-items: start;
+    padding: 14px;
   }
 
   .hero-card {
-    border-radius: 24px;
+    width: 100%;
+    margin: 0;
+    padding: 22px 18px 24px;
+    border-radius: 22px;
+    backdrop-filter: blur(12px);
+  }
+
+  .hero-card::before {
+    width: 180px;
+    height: 180px;
+    inset: auto -14% -12% auto;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.17em;
+  }
+
+  h1 {
+    margin-top: 12px;
+    font-size: clamp(2.9rem, 15vw, 4.2rem);
+    line-height: 0.94;
   }
 
   .copy-stack {
-    gap: 16px;
+    gap: 14px;
+    margin-top: 22px;
   }
 
   .copy-stack p {
+    font-size: 1rem;
     line-height: 1.7;
+  }
+
+  .closing-line {
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  .onepager {
+    padding: 10px;
+  }
+
+  .hero-card {
+    padding: 18px 16px 20px;
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 14vw, 3.4rem);
+  }
+
+  .copy-stack p {
+    font-size: 0.96rem;
+    line-height: 1.64;
   }
 }
