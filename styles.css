@@ -137,14 +137,6 @@ body::before {
   min-width: 0;
 }
 
-.hero-side {
-  display: flex;
-  flex: 0 0 220px;
-  flex-direction: column;
-  gap: 14px;
-  justify-content: flex-end;
-}
-
 h1 {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
@@ -173,39 +165,6 @@ h1 {
   margin-top: 10px;
   color: var(--text) !important;
   font-weight: 600;
-}
-
-.mini-card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 16px;
-  border: 1px solid rgba(255, 185, 210, 0.14);
-  border-radius: 22px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
-    rgba(255, 255, 255, 0.02);
-}
-
-.mini-card-accent {
-  border-color: rgba(255, 122, 162, 0.24);
-  background:
-    linear-gradient(180deg, rgba(255, 122, 162, 0.1), rgba(255, 255, 255, 0.015)),
-    rgba(255, 255, 255, 0.02);
-}
-
-.mini-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent-soft);
-}
-
-.mini-card strong {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--text);
 }
 
 @media (max-width: 760px) {
@@ -250,14 +209,7 @@ h1 {
   }
 
   .hero-layout {
-    flex-direction: column;
-    gap: 18px;
     margin-top: 12px;
-  }
-
-  .hero-side {
-    flex: 1 1 auto;
-    width: 100%;
   }
 
   h1 {
@@ -300,8 +252,7 @@ h1 {
     font-size: clamp(2.5rem, 14vw, 3.4rem);
   }
 
-  .copy-stack p,
-  .mini-card strong {
+  .copy-stack p {
     font-size: 0.96rem;
     line-height: 1.64;
   }
