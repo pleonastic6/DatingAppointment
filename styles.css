@@ -18,6 +18,7 @@
 
 html {
   color-scheme: dark;
+  background-color: var(--bg-deep);
 }
 
 body {
@@ -25,6 +26,7 @@ body {
   min-height: 100vh;
   font-family: "Manrope", sans-serif;
   color: var(--text);
+  background-color: var(--bg-deep);
   background:
     radial-gradient(circle at 15% 20%, rgba(183, 43, 88, 0.3), transparent 30%),
     radial-gradient(circle at 82% 18%, rgba(255, 130, 170, 0.18), transparent 24%),
